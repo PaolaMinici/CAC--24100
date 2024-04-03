@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4 - HTML - Formularios</title>
+</head>
+<body>
+    <section>
+        <form action="./resultado-busqueda.html"> <!--url que va a recibir esos datos-->
+            <h3>Buscar</h3>
+            <input type="search"
+                name="claveDeBusqueda"> <!--cuando escribo aparece una cruz para limpiar el campo-->
+            <button>
+                Buscar
+            </button>
+        </form>
+    </section>
+    <section>   
+    <h1>Formularios</h1> <!--no puede haber un form dentro de otro, si se puede tener dos uno debajo del otro-->
+    <form method="post"> <!--envia todos los datos a la web y se ven en el url--> <!--si le pongo "post" en la url no ven los datos enviados pero si se envian-->
+        <!--div caja de separacion-->
+        <div>
+            <!--cuadro alfanumerico + nombre del campo-->
+            <label for="nombre">Nombre :</label>
+            <input id="nombre"
+                name="nombre">
+        </div>
+        <!--linea horizontal-->
+        <hr>
+        <div> 
+            <!--cuadro numerico + etiqueta validez 0, si le quito la validez obtengo resultados -1-->
+            <!--edad 38 por default-->
+            <label>Edad</label>
+            <input type="number" 
+            min="0"
+            max="120"
+            value="38">
+        </div>
+        <hr>
+           
+        <div> 
+            <!--cuadro de fecha tipo calendario, por default fijar fecha-->
+            <label for="fechaNac"></label>
+            <input id="fechaNac"
+                value="2000-01-01"
+                type="date"
+                name="fechaNac">
+            </div>
+       
+        <!--salto de linea que casi no se usa. Se utiliza div-->
+        <br>
+        <div>
+            <span>Turno</span>
+            <div>
+                <input type="radio" 
+                    name="turno"
+                    value="mañana"
+                    checked> Mañana <!--fijar valor prefijado en mañana-->
+                <input type="radio" 
+                    name="turno"
+                    value="tarde"> Tarde 
+                <input type="radio"   
+                    name="turno"  
+                    value="noche"> Noche
+        </div>
+    </div>
+
+        
+        <div> 
+            <label>Estudios:</label>
+            <span>Primaria</span>
+            <input type="checkbox"
+                name="estudios"
+                value="pri">
+            <span>Secundaria</span>
+            <input type="checkbox"
+                name="estudios"
+                value="sec"
+                checked>
+            <span>Terciario</span>
+            <input type="checkbox"
+                name="estudios"
+                value="ter">
+            <span>Universitario</span>
+            <input type="checkbox"
+                name="estudios"
+                value="uni">
+        </div>
+        <div>
+            <label>Nacionalidad</label> <!--seleccion en combo u opciones--> <!--fijar con select-->
+            <select id="nacionalidad" 
+            name="nacionalidad">
+                <option value="1">Arg</option>
+                <option value="2">Par</option>
+                <option value="3" selected>Bra</option>
+                <option value="4">Chi</option>
+            </select>
+        </div>
+        <hr>
+        <div>
+            <label for="datos adicionales">Datos adicionales</label> <!--para que el cursor se posiciones en el campo-->
+            <div> 
+                <textarea id="datos adicionales"
+                    name="datos adicionales"
+                    cols="50"                     
+                    rows="5"></textarea> <!--para indicar el tamaños del campo de datos-->
+            </div>
+
+            <div>
+                <label>CV</label> <!--subir un archivo-->
+                <div>
+                    <!--tph: investigar si existe un atributo para validar los formatos aceptados, ej: jpg, pdf, etc.-->
+                    <input type="file">
+                </div>
+               <hr>
+            </div>
+           
+        </div>
+
+        <button>
+            Enviar
+        </button>
+        <button type="reset"> <!--opción para limpiar el formulario-->
+            Limpiar
+        </button>
+       
+    </form>
+</section>
+<section>
+    <h2>Loging</h2>
+    <form>
+        <label>Usuario</label>
+        <input type="text" required> <!--atributo requerido u obligatorio-->
+        <label>Password</label>
+        <input type="password"> <!--investigar sobre el ojito para que se visualice la password-->
+        <button>
+            Loging
+        </button>
+    </form>
+</section>
+<section>
+    <h2>Reset Password</h2>
+    <form>
+        <label>Email *</label>
+        <input type="email" required> <!--atributo requerido u obligatorio-->
+        <button>
+            Reset
+        </button>
+    </form>
+</section>
+
+    
+</body>
+</html>
